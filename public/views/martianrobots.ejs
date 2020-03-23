@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Martian Robots</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/martianrobots.css">
+    </head>
+    <body>
+        <div class="content">
+            <% if (results !== undefined) {%>
+                <table> 
+                    <thead>
+                        <tr>
+                            <th>Coordinates</th>
+                            <th>Lost?</th>
+                        </tr>
+                    </thead>
+                    <tbody id="results" max-width="100%" max-height="200px">
+                        <%results.forEach(robot => { %>
+                            <tr>
+                                <td><%=robot.position.column %> <%=robot.position.row%> <%=robot.position.orientation%></td>
+                                <% if (robot.lost) {%>
+                                    <td>LOST</td>
+                                <% } else { %>
+                                    <td></td>
+                                <% } %>   
+                            </tr>
+                        <%});%>
+                    </tbody>
+                </table>
+                <form action="/play" method="POST">
+                    <button type="submit" name="secondsubmit" value="submit">Already changed the input? Restart</button>
+                </form>
+            <% } else {%>
+                <form action="/play" method="POST">
+                    <button type="submit" name="firstsubmit" value="submit">Start simulation</button>
+                </form>
+            <% } %>  
+        </div>
+    </body>
+</html>

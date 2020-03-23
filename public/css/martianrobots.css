@@ -1,0 +1,46 @@
+html, * {
+    font-family: 'Montserrat', sans-serif;
+    font-size: large;
+    background-color: whitesmoke;
+}
+
+.content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+table, th, td {
+    border: 1px solid gray;
+}
+
+td, td {
+    padding: 5px;
+}
+
+table {
+    border-collapse: collapse;
+    min-width: 50vw;
+    text-align: center;
+    margin-bottom: 2vh;
+}
+
+button {
+    transition-duration: 0.5s;
+    padding: 10px 30px;
+    color: whitesmoke;
+    background-color: gray;
+    border-radius: 6px;
+    border: none;
+}
+
+button:hover {
+    cursor: pointer;
+    border: 1px solid gray;
+    color: gray;
+    background-color: whitesmoke;
+}

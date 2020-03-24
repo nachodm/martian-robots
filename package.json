@@ -4,7 +4,8 @@
   "description": "Martian Robots coding task for Guidesmiths interview.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -17,5 +18,8 @@
     "fs": "0.0.1-security",
     "open": "^7.0.3",
     "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "mocha": "^7.1.1"
   }
 }

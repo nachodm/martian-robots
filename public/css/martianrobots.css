@@ -33,6 +33,7 @@ button {
     transition-duration: 0.5s;
     padding: 10px 30px;
     color: whitesmoke;
+    border: 1px solid whitesmoke;
     background-color: gray;
     border-radius: 6px;
     border: none;

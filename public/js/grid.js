@@ -6,7 +6,7 @@
 class Grid {
 
     /**
-     * 
+     * Grid constructor.
      * @param {*} columns Number of columns of the grid.
      * @param {*} rows Number of rows of the grid.
      */

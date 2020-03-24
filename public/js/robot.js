@@ -13,7 +13,6 @@ class Robot {
         this.position = position;
         this.instructionsArray = instructionsArray;
         this.lost = false;
-        this.move();
     }
 
     move() {

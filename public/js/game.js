@@ -18,7 +18,7 @@ class Game {
     setUpRobot(grid, input, counter) {
         let aux = input[counter].split(' ');
         //Uses regular expressions to correctly trim the characters.
-        const robot = new Robot(grid, {column: parseInt(aux[0]), row: parseInt(aux[1]), orientation:aux[2].replace(/[^\d\w:/ ]/g, '')}, input[counter+1].replace(/(\r\n|\n|\r)/gm, ""), false);
+        const robot = new Robot(grid, {row: parseInt(aux[0]), column: parseInt(aux[1]), orientation:aux[2].replace(/[^\d\w:/ ]/g, '')}, input[counter+1].replace(/(\r\n|\n|\r)/gm, ""), false);
         this.robots.push(robot);
     }
 

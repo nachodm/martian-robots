@@ -38,23 +38,21 @@ class Robot {
         let posAux = Object.assign({}, this.position);
         switch (this.position.orientation) {
             case 'N':
-                this.position.row++;
-                break;
-            case 'S':
-                this.position.row--;
-                break;
-            case 'E':
                 this.position.column++;
                 break;
-            case 'W':
+            case 'S':
                 this.position.column--;
+                break;
+            case 'E':
+                this.position.row--;
+                break;
+            case 'W':
+                this.position.row++;
                 break;
             default:
                 break;
         }
-        if(this.isLost()) {
-            this.position = posAux;
-        }
+        this.isLost(posAux);
     }
 
     /**
@@ -103,11 +101,15 @@ class Robot {
     /**
      * Checks if a robot is out of limits.
      */
-    isLost(){
+    isLost(posAux){
         if(this.position.column > this.grid.columns || this.position.column < 0 || this.position.row > this.grid.rows || this.position.row < 0){
-             this.lost = true;
+            let coordinates = {row: this.position.row, column: this.position.column};
+            if (!this.grid.scent.includes(JSON.stringify(coordinates))) {
+                this.grid.scent.push(JSON.stringify(coordinates));
+                this.lost = true;
+            }
+            this.position = posAux;
         }
-        return this.lost;
     }
 }
 

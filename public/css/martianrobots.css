@@ -45,3 +45,7 @@ button:hover {
     color: gray;
     background-color: whitesmoke;
 }
+
+.relaxed {
+    letter-spacing: 2px;
+}

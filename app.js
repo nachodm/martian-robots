@@ -29,10 +29,10 @@ app.post('/play', (request, response) => {
             console.log("OUTPUT:")
             thisGame.robots.forEach(robot => {
                 if (robot.lost) {
-                    console.log(robot.position.column + " " + robot.position.row + " " + robot.position.orientation + " LOST" );
+                    console.log(robot.position.row + " " + robot.position.column + " " + robot.position.orientation + " LOST" );
                 }    
                 else {
-                    console.log(robot.position.column + " " + robot.position.row + " " + robot.position.orientation);
+                    console.log(robot.position.row + " " + robot.position.column + " " + robot.position.orientation);
                 }
             });
             //Displays the info via web.

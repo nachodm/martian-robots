@@ -10,24 +10,25 @@ class Grid {
      * @param {*} columns Number of columns of the grid.
      * @param {*} rows Number of rows of the grid.
      */
-    constructor(columns, rows) {
-        this.columns = columns;
+    constructor(rows, columns) {
         this.rows = rows;
-        this.checkSize(this.columns, this.rows);
+        this.columns = columns;
+        this.checkSize(this.rows, this.columns);
+        this.scent = [];
     }
 
     /**
      * Checks grid layout is within the specified requirements. Caps it to the maximum 50 rows or 50 columns if 
      * input was too large or wide.
-     * @param {*} columns Number of columns of the grid.
-     * @param {*} rows Number of rows of the grid.
+     * @param {int} rows Number of rows of the grid.
+     * @param {int} columns Number of columns of the grid.
      */
-    checkSize(columns, rows) {
-        if (columns > 50) {
-            this.columns = 50;
-        }
-        else if (rows > 50) {
+    checkSize(rows, columns) {
+        if (rows > 50) {
             this.rows = 50;
+        }
+        else if (columns > 50) {
+            this.columns = 50;
         }
     }
 }

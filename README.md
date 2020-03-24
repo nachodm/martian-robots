@@ -7,6 +7,8 @@ You can use either `npm start` or directly `node app.js` to run the application.
 Input data for the application is provided through the input.txt file you can find at the root of the application. Please feel free to make any changes. 
 The output is provided both through the console or a simple webpage to make it easier to check and rerun if needed.
 
+Docker image is created but not built, as Docker is not compatible with Windows 10 Home (its just available for Pro or Enterprise versions)
+
 ## Martian robots
 Here we present a problem to solve. We will value the use of tests for the code challenge resolution.
 

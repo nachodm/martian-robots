@@ -15,6 +15,9 @@ class Robot {
         this.lost = false;
     }
 
+    /**
+     * Reads the instructions array and move the robot forward or changes its orientation depending on each char.
+     */
     move() {
         let counter = 0;
         do {
@@ -28,6 +31,9 @@ class Robot {
         } while (counter < this.instructionsArray.length && !this.lost)
     }
 
+    /**
+     * Moves the robot forward taking into consideration its current orientation. Checks if it gets lost when doing so.
+     */
     moveForward () {
         let posAux = Object.assign({}, this.position);
         switch (this.position.orientation) {
@@ -46,11 +52,15 @@ class Robot {
             default:
                 break;
         }
-        if(this.isLost(this.position)) {
+        if(this.isLost()) {
             this.position = posAux;
         }
     }
 
+    /**
+     * Turns the robot orientation according to the input parameter
+     * @param {String} direction One char String that decides if robot moves left or right.
+     */
     turn(direction) {
         if (direction === 'L'){
             switch (this.position.orientation) {
@@ -90,7 +100,10 @@ class Robot {
           }
     }
 
-    isLost(position){
+    /**
+     * Checks if a robot is out of limits.
+     */
+    isLost(){
         if(this.position.column > this.grid.columns || this.position.column < 0 || this.position.row > this.grid.rows || this.position.row < 0){
              this.lost = true;
         }

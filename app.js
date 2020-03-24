@@ -17,12 +17,15 @@ app.get("/", (request, response) => {
 });
 
 app.post('/play', (request, response) => {
+    // Opens input.txt file, converts it into a String and then creates an array for each document line.
     let thisGame = new Game(fs.readFileSync('input.txt').toString().split("\n"));
     thisGame.executeGame((err) => {
         if (err) {
-            console.log("something went terribly wrong :(");
+            console.log("Something went terribly wrong :", err);
+            response.redirect("/");
         }
         else {
+            //Displays the info via console.
             console.log("OUTPUT:")
             thisGame.robots.forEach(robot => {
                 if (robot.lost) {
@@ -32,6 +35,7 @@ app.post('/play', (request, response) => {
                     console.log(robot.position.column + " " + robot.position.row + " " + robot.position.orientation);
                 }
             });
+            //Displays the info via web.
             response.render("martianrobots", {results: thisGame.robots});
         }
     });

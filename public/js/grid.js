@@ -17,7 +17,8 @@ class Grid {
     }
 
     /**
-     * Checks grid layout is within the specified requirements.
+     * Checks grid layout is within the specified requirements. Caps it to the maximum 50 rows or 50 columns if 
+     * input was too large or wide.
      * @param {*} columns Number of columns of the grid.
      * @param {*} rows Number of rows of the grid.
      */
